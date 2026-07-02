@@ -1,6 +1,14 @@
-## Live Demo
+# Quizzical App
 
-https://quizzical5react.netlify.app
+A React quiz application using Open Trivia API.
+
+## Live Demo
+👉 https://quizzical5react.netlify.app
+
+## Tech Stack
+- React
+- Vite
+- CSS
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
