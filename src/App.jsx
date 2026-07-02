@@ -10,7 +10,7 @@ export default function App() {
     }
 
     return (
-        <div>
+        <div className="app-shell">
             <div className='seq'></div>
             {isStart ? <Intro handleStart={handleStart} /> : <Main />}
             <div className='seq2'></div>

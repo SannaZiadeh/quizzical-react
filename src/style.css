@@ -7,19 +7,35 @@
 body{
     background-color: #F5F7FB;
     font-family: 'Inter', sans-serif;
+    margin: 0;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    position: relative;
+    isolation: isolate;
+}
+.app-shell{
+    position: relative;
+    min-height: 100dvh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+.intro-screen{
+    min-height: 100dvh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    min-height: 100vh;
+    text-align: center;
 }
 .intro{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 30vh;
     overflow:hidden;
 
 }
@@ -32,7 +48,8 @@ background: #FFFAD1;
 top: -150px;    
 right: -100px; 
 rotate:45deg;
-z-index: -1;
+z-index: 0;
+pointer-events: none;
 }
 .seq2{
 position: fixed;
@@ -43,8 +60,14 @@ background: #DEEBF8;
  bottom: -150px;  
  left: -100px;
 rotate: 75deg;
-z-index: -1;
+z-index: 0;
+pointer-events: none;
 }  
+.intro-screen,
+main{
+    position: relative;
+    z-index: 1;
+}
 .check,.intro button{
 width: 193px;
 height: 52px;
@@ -230,18 +253,18 @@ font-size: 12.7px;
     }
     
     .seq, .seq2 {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        padding: 10px;
+        overflow-x: hidden;
     }
-    
-    .intro {
-        margin-top: 20vh;
+
+    .intro-screen {
+        padding: 16px;
     }
     
     .intro h1 {
@@ -294,7 +317,18 @@ font-size: 12.7px;
     }
     
     .seq, .seq2 {
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 140px;
+        opacity: 1;
+    }
+
+    .seq {
+        top: -35px;
+        right: -35px;
+    }
+
+    .seq2 {
+        bottom: -35px;
+        left: -35px;
     }
 }
